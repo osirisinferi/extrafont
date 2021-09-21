@@ -72,7 +72,7 @@ ttf_extract <- function(ttfiles) {
   # -pft means use Freetype to process fonts
   # -a means extract all glyphs (needed for minus sign - latin1 doesn't include it)
   # -GfAe means extract AFM file only
-  if (.Platform$OS.type == "windows")  args <- c("-a", "-G", "fAe")
+  if (.Platform$OS.type == "windows")  args <- c("-a", "-G", "fAe", "-O", "s")
   else                                 args <- c("-a", "-GfAe")
 
   for (i in seq_along(ttfiles)) {
